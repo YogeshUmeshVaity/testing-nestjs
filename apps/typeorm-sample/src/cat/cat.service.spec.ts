@@ -24,6 +24,9 @@ describe('CatService', () => {
       providers: [
         CatService,
         {
+          // each registered repository is automatically represented by a Repository token.
+          // this function returns a prepared token based on a given entity.
+          // it allows you to get the same injection token that @InjectRepository() returns.
           provide: getRepositoryToken(Cat),
           // define all the methods that you use from the catRepo
           // give proper return values as expected or mock implementations, your choice
